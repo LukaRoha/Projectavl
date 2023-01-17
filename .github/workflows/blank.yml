@@ -64,5 +64,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: rohalr/service1:latest
+          tags: rohalr/roha_docker:1.0
 
