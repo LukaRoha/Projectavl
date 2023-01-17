@@ -37,7 +37,7 @@ jobs:
       run: |
            python -c "import sys; print(sys.version)"
     - name:  Run test 
-       working-directory:service1
+      working-directory: service1
       run: |
           pytest 
        
