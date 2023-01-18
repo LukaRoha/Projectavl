@@ -37,7 +37,7 @@ jobs:
 
       - name: Publish to Docker Hub
         if: success()
-        uses: docker/publish-action@v2
+        uses: docker/publish-action@v3
         with:
          tags: service1:$SERVICE1_VERSION
          context: .
