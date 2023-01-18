@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - 'main'
-
+    paths:
+     -'service1/**'
+     -'.github/workflows/buildimage.yaml'
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -28,5 +30,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
+          context: service1
           push: true
           tags: service1/app:latest
