@@ -9,7 +9,7 @@ on:
       -  'main'
      paths: 
        -'service1/**'
-       -'Projectavl/.github/workflows/buildimage.yaml'   
+       -'Projectavl/.github/workflows/entrypoint.py'   
 jobs:
   
   build:
