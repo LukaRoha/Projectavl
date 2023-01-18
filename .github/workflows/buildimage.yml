@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - 'main'
-    paths:
-      -'service1/**'
-      -'.github/workflows/buildimage.yml'
 
 jobs:
   docker:
