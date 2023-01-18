@@ -6,7 +6,13 @@ on:
       - 'main'
     paths:
      -'service1/**'
-     -'.github/workflows/buildimage.yaml'
+     -'Projectavl/.github/workflows/buildimage.yaml'
+  pull_request:
+    branches:
+      -  'main'
+    paths: 
+       -'service1/**'
+       -'Projectavl/.github/workflows/buildimage.yaml'     
 jobs:
   docker:
     runs-on: ubuntu-latest
