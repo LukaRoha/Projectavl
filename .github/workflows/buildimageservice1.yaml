@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
-        name: Checkout
+        name: Checkout code
         uses: actions/checkout@v3
       -
         name: Set up QEMU
@@ -37,7 +37,7 @@ jobs:
 
       - name: Publish to Docker Hub
         if: success()
-        uses: docker/publish-action@v3
+        uses: docker/publish-action@v2
         with:
          tags: service1:$SERVICE1_VERSION
          context: .
