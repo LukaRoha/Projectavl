@@ -34,6 +34,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: service1
+          context: ./deploy --version_service1=v1.0 
           push: true
           tags: rohalr/roha_docker:service1
