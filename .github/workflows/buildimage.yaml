@@ -36,4 +36,4 @@ jobs:
         with:
           context: service1
           push: true
-          tags: service1:1.0
+          tags: rohalr/roha_docker:service1
