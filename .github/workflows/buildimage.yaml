@@ -4,9 +4,7 @@ on:
   push:
     branches:
       - 'main'
-    paths:
-     -'service1/**'
-     -'Projectavl/.github/workflows/buildimage.yaml'
+ 
   pull_request:
     branches:
       -  'main'
