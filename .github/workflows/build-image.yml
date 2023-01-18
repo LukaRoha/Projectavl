@@ -5,7 +5,7 @@ on:
     branches:
       - 'main'
     paths:
-      -'Projectavl/service1/'
+      -'.Projectavl/service1/Dockerfile'
 
 jobs:
   docker:
