@@ -5,7 +5,8 @@ on:
     branches:
       - 'main'
     paths:
-      -'.Projectavl/service1/Dockerfile'
+      -'service1/**'
+      -'.github/workflows/buildimage.yml'
 
 jobs:
   docker:
