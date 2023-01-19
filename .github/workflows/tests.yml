@@ -36,5 +36,14 @@ jobs:
       with:
           username: ${{ secrets.DOCKERUSER }}
           password: ${{ secrets.DOCKERPWD }}
-          
+     
+    - name: Publish Service1 Docker Image
+      run: |
+        docker tag service1:latest rohalr/service1:latest
+        docker push rohalr/service1
+
+    - name: Publish Service2 Docker Image
+      run: |
+        docker tag service2:latest rohalr/service2:latest
+        docker push rohalr/service2   
     
