@@ -39,12 +39,18 @@ jobs:
      
     - name: Push service1 image to Docker hub 
       uses: docker/login-action@v2
+      with: 
+         username: ${{ secrets.DOCKERUSER }}
+         password: ${{ secrets.DOCKERPWD }}
     - run: |
         echo "$DOCKERPWD" | docker login -u "$DOCKERUSER" --password-stdin
         docker push rohalr/service1:latest
         
     - name: Push service2 image to Docker Hub
       uses: docker/login-action@v2
+      with: 
+         username: ${{ secrets.DOCKERUSER }}
+         password: ${{ secrets.DOCKERPWD }}
     - run: |
         echo "$DOCKERPWD" | docker login -u "$DOCKERUSER" --password-stdin
         docker push rohalr/service2:latest
