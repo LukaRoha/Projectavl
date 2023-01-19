@@ -8,4 +8,4 @@ ENV fprocess="python2 entrypoint.py"
 COPY entrypoint.py / 
 
 EXPOSE 8080
-CMD [ "fwatchdog" ]
+CMD [ "fwatchdog", "entrypoint.py" ]
