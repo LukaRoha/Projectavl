@@ -51,7 +51,6 @@ jobs:
       with:
          username: ${{ secrets.DOCKERUSER }}
          password: ${{ secrets.DOCKERPWD }}
-     
          context: service2
          push: true
          tags: service2:latest
