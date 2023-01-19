@@ -20,6 +20,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        python -m pip install flake8 pytest
          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Build Service1 Docker Image
       run: |
@@ -29,7 +30,7 @@ jobs:
         docker build -t service2:1.0 -f service2/Dockerfile .
     - name: Run tests
       run: |
-        pytest 
+          pytest 
     - name: Login to Docker Hub
       run: echo ${{ secrets.DOCKERPWD }} | docker login -u ${{ secrets.DOCKERUSER }} --password-stdin
 
