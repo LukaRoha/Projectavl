@@ -44,7 +44,7 @@ jobs:
          password: ${{ secrets.DOCKERPWD }} 
          context: service1
          push: true
-         tags: rohalr/roha_docker:v1.0
+         tags: service1:latest
      
     - name: Push service2 image to Docker Hub
       uses: docker/login-action@v2
