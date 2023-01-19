@@ -37,15 +37,4 @@ jobs:
           username: ${{ secrets.DOCKERUSER }}
           password: ${{ secrets.DOCKERPWD }}
           
-    - name: Build and push service1
-      uses: docker/build-push-action@v3
-      with:  
-        context: service1
-        push: true
-        Tags: rohalr/roha_docker:service1
-          
-    - name: Build and push service2
-      with:
-       context: service2
-       push: true
-       tags: rohalr/roha_docker:service2
+    
