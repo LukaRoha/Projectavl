@@ -41,10 +41,10 @@ jobs:
       with:  
         context: service1
         push: true
-        Tags: rohalr/roha_docker:v1.0
+        Tags: rohalr/roha_docker:service1
           
     - name: Publish Service2 Docker Image
       with:
        context: service2
        push: true
-       tags: rohalr/roha_docker:v1.0
+       tags: rohalr/roha_docker:service2
