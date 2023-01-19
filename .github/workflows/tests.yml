@@ -52,5 +52,6 @@ jobs:
          username: ${{ secrets.DOCKERUSER }}
          password: ${{ secrets.DOCKERPWD }}
      
-    - run: |
-       docker push rohalr/roha_docker:service2
+         context: service2
+         push: true
+         tags: service2:latest
