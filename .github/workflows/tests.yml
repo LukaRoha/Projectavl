@@ -36,15 +36,15 @@ jobs:
       with:
           username: ${{ secrets.DOCKERUSER }}
           password: ${{ secrets.DOCKERPWD }}
-    #- name: Publish Service1 Docker Image
-      #uses: docker/build-push-action@v3
-      #with:  
-       # context: service1
-        #push: true
-        #Tags: rohalr/roha_docker:service1
+    - name: Publish Service1 Docker Image
+      uses: docker/build-push-action@v3
+      with:  
+        context: service1
+        push: true
+        Tags: rohalr/roha_docker:service1
           
-    #- name: Publish Service2 Docker Image
-     # with:
-      # context: service2
-       #push: true
-       #tags: rohalr/roha_docker:service2
+    - name: Publish Service2 Docker Image
+      with:
+       context: service2
+       push: true
+       tags: rohalr/roha_docker:service2
