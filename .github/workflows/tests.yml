@@ -23,10 +23,10 @@ jobs:
          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Build Service1 Docker Image
       run: |
-        docker build -t service1:1.0 -f service1-Dockerfile .
+        docker build -t service1:1.0 -f service1/Dockerfile .
     - name: Build Service2 Docker Image
       run: |
-        docker build -t service2:1.0 -f service2-Dockerfile .
+        docker build -t service2:1.0 -f service2/Dockerfile .
     - name: Run tests
       run: |
         pytest 
