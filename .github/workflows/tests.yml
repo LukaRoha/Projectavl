@@ -37,10 +37,14 @@ jobs:
           username: ${{ secrets.DOCKERUSER }}
           password: ${{ secrets.DOCKERPWD }}
     - name: Publish Service1 Docker Image
-      run: |
-        docker tag service1:latest ${{ secrets.DOCKERUSER }}/service1:latest
-        docker push ${{ secrets.DOCKERUSER }}/rohalr/roha_docker:latest
+      uses: docker/build-push-action@v3
+      with:  
+        context: service1
+        push: true
+        Tags: rohalr/roha_docker:v1.0
+          
     - name: Publish Service2 Docker Image
-      run: |
-        docker tag service2:latest ${{ secrets.DOCKERUSER }}/service2:latest
-        docker push ${{ secrets.DOCKERUSER }}/rohalr/roha_docker:latest
+      with:
+       context: service2
+       push: true
+       tags: rohalr/roha_docker:v1.0
