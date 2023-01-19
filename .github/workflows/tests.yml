@@ -28,7 +28,7 @@ jobs:
     - name: Build Service2 Docker Image
       run: |
         docker build -t service2:latest -f service2/Dockerfile .
-    #- name: Run tests
+    - name: Run tests
      # run: |
       #    pytest 
     - name: Login to Docker Hub
