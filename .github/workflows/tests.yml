@@ -44,7 +44,7 @@ jobs:
          password: ${{ secrets.DOCKERPWD }}
      
     - run: |
-         docker tag service1:latest rohalr:latest
+         docker tag service1:latest  rohalr/roha_docker:service1
          docker push rohalr/service1:latest
         
     - name: Push service2 image to Docker Hub
@@ -54,5 +54,5 @@ jobs:
          password: ${{ secrets.DOCKERPWD }}
      
     - run: |
-       docker tag service1:latest rohalr:latest
+       docker tag service1:latest rohalr/roha_docker:service2
        docker push rohalr/service2:latest
