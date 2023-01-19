@@ -38,19 +38,14 @@ jobs:
       #    password: ${{ secrets.DOCKERPWD }}
      
     - name: Push service1 image to Docker hub 
-      uses: docker/login-action@v2
-      with: 
-         username: ${{ secrets.DOCKERUSER }}
-         password: ${{ secrets.DOCKERPWD }}
+
     - run: |
-        echo "$DOCKERPWD" | docker login -u "$DOCKERUSER" -p -
-        docker push rohalr/service1:latest
+        docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_PASSWORD }}"
+        docker push rohalr/service1
         
     - name: Push service2 image to Docker Hub
-      uses: docker/login-action@v2
-      with: 
-         username: ${{ secrets.DOCKERUSER }}
-         password: ${{ secrets.DOCKERPWD }}
+ 
+
     - run: |
-        echo "$DOCKERPWD" | docker login -u "$DOCKERUSER" -p -
-        docker push rohalr/service2:latest
+       docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_PASSWORD }}"
+       docker push rohalr/service1
