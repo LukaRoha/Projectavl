@@ -38,9 +38,9 @@ jobs:
           password: ${{ secrets.DOCKERPWD }}
     - name: Publish Service1 Docker Image
       run: |
-        docker tag service1:latest ${{ secrets.DOCKERUSER }}/rohalr/roha_docker:latest
-        docker push ${{ secrets.DOCKERUSER }}/service1:latest
+        docker tag service1:latest ${{ secrets.DOCKERUSER }}/service1:latest
+        docker push ${{ secrets.DOCKERUSER }}/rohalr/roha_docker:latest
     - name: Publish Service2 Docker Image
       run: |
-        docker tag service2:latest ${{ secrets.DOCKERUSER }}/rohalr/roha_docker:latest
-        docker push ${{ secrets.DOCKERUSER }}/service2:latest
+        docker tag service2:latest ${{ secrets.DOCKERUSER }}/service2:latest
+        docker push ${{ secrets.DOCKERUSER }}/rohalr/roha_docker:latest
