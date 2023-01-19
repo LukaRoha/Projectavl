@@ -39,7 +39,6 @@ jobs:
      
     - name: Push service1 image to Docker hub 
       uses: docker/login-action@v2
-            docker/build-push-action@v3
       with:
          username: ${{ secrets.DOCKERUSER }}
          password: ${{ secrets.DOCKERPWD }} 
