@@ -35,15 +35,15 @@ jobs:
         pytest test_*.py
 
     - name: Login to Docker Hub
-      run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+      run: echo ${{ secrets.DOCKERPWD }} | docker login -u ${{ secrets.DOCKERUSER }} --password-stdin
 
     - name: Publish Service1 Docker Image
       run: |
-        docker tag service1:latest ${{ secrets.DOCKER_USERNAME }}/service1:latest
-        docker push ${{ secrets.DOCKER_USERNAME }}/service1:latest
+        docker tag service1:latest ${{ secrets.DOCKERUSER }}/service1:latest
+        docker push ${{ secrets.DOCKERUSER }}/service1:latest
 
     - name: Publish Service2 Docker Image
       run: |
-        docker tag service2:latest ${{ secrets.DOCKER_USERNAME }}/service2:latest
-        docker push ${{ secrets.DOCKER_USERNAME }}/service2:latest
+        docker tag service2:latest ${{ secrets.DOCKERUSER }}/service2:latest
+        docker push ${{ secrets.DOCKERUSER }}/service2:latest
 
