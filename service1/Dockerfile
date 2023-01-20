@@ -5,7 +5,7 @@ RUN curl -sL https://github.com/openfaas/faas/releases/download/0.9.14/fwatchdog
     
 
 ENV fprocess="python2 entrypoint.py"
-COPY ./service1/entrypoint.py /
+COPY ./service1/entrypoint.py /    #treblo navest tocno di se nalazi file.
 
 EXPOSE 8080
 CMD [ "fwatchdog" ]
