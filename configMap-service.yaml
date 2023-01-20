@@ -1,8 +1,0 @@
-# sadrži conf. data kao što su URl od datebase i ostale iz service.
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: service-configmap
-  
-data:
-  database_url: service1-service
