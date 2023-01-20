@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service2-deployment
+  #labels:
+   #app:
+spec:
+  replicas: 2 #broji replika ako dode do pada jedne da druga preuzme pa je down time miniamalan
+  selector:
+    matchLabels:
+      app: service2
+  template:
+    metadata:
+      labels:
+        app: service2
+    spec:
+      containers:
+      - name: service2
+        image: rohalr/service2:latest
+        ports:
+        - containerPort: 8081
+      imagePullSecret:
+      -name: mysecret  
+#dodatak za secret key
+  env:
+  - name: service_username
+    valueFrom:
+     secretKeyRef: 
+       name: service-secret
+       key: my-username
+     
+  - name: service_password
+    valueFrom:
+     secretKeyRef: 
+       name: service-secret
+       key: my-password
+  - name: service_server
+    valueFrom:
+     configMapRef: 
+        name: configMap-service
+        key: databese_url
+     
+
+---
+#Service moze odovojeno ali istraživanjem sam primjetio da deployment i service(SVC) idu zajedno.
+#SVC dodjeljuje premanet IP adresa podova(ako Pod umre i dode drugi imat če istu ip ardresu u protivnom morali bi ponovno dodjelit ip adresu i sve ponovno configurirat).
+apiVersion: v1
+kind: Service
+metadata:
+  name: service2-service
+spec:
+  selector:
+    app: service2
+  type: LoadBalancer 
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+      nodePort: 30000
